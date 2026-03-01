@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat's Heart | For Batman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Sacramento&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+    <div id="star-container"></div>
+    <div id="haptic-overlay"></div>
+
+    <div class="app-container">
+        <!-- Intro Screen -->
+        <section id="intro-screen" class="screen active">
+            <div class="card">
+                <div id="intro-text-batch">
+                    <p class="intro-text stagger" data-delay="0">Alignment Required</p>
+                    <p class="intro-text stagger" data-delay="1">Establishing baseline…</p>
+                    <p class="intro-text stagger" data-delay="2">Mapping protective instinct…</p>
+                    <p class="intro-text stagger" data-delay="3">Listening for the quiet strength behind the silence…
+                    </p>
+                    <p class="intro-text stagger" data-delay="4">Tracing the way you hold the world together without
+                        asking for praise…</p>
+                    <p class="intro-text stagger" data-delay="5">Syncing heart frequencies…</p>
+                    <p class="intro-text stagger" data-delay="6"
+                        style="margin-top: 2rem; color: var(--rose-gold); font-weight: bold; font-size: 1.8rem;">Match
+                        Found</p>
+                    <p class="intro-text stagger" data-delay="7">The Dark Knight’s Light is steady, rare, and
+                        unmistakable.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Welcome Screen -->
+        <section id="welcome-screen" class="screen">
+            <div class="card">
+                <h1 class="sacramento" style="font-size: 3.2rem;">If you’re here, Batman…</h1>
+                <p style="margin-bottom: 2rem;">then you’re exactly where my heart hoped you’d arrive.</p>
+
+                <p style="margin-bottom: 1.5rem;">Not by accident.<br>Not by curiosity alone.<br>But because something
+                    in you recognized this space as safe, familiar, and meant for you.</p>
+
+                <div class="sacramento" style="font-size: 2.2rem; margin: 2rem 0;">
+                    This isn’t a place to be strong.<br>It’s a place to rest.
+                </div>
+
+                <p style="margin-bottom: 2rem;">Welcome to Cat’s Heart.<br>Enter slowly. I’m already here.</p>
+
+                <button id="btn-enter" class="btn">Enter Our Sanctuary</button>
+            </div>
+        </section>
+
+        <!-- Home Hub -->
+        <section id="home-screen" class="screen">
+            <div class="card heartbeat-glow">
+                <h1 class="sacramento" style="font-size: 3rem;">Our Sanctuary</h1>
+                <p>The signal is clear. What does your heart seek?</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="card" id="feat-connection">
+                    <h2 class="emoji-bounce">🦇 Our Connection</h2>
+                    <p>Open when letters for every mood.</p>
+                </div>
+
+                <div class="card" id="feat-vault">
+                    <h2 class="emoji-bounce">🗝️ The Vault</h2>
+                    <p>Pieces of my soul, locked for your eyes.</p>
+                </div>
+
+                <div class="card" id="feat-affirmations">
+                    <h2 class="emoji-bounce">✨ Daily Affirmations</h2>
+                    <p>Words to empower your spirit.</p>
+                </div>
+
+                <div class="card" id="feat-challenges">
+                    <h2 class="emoji-bounce">🎯 Mini Challenges</h2>
+                    <p>Small steps for our hearts to grow.</p>
+                </div>
+
+                <div class="card" id="feat-mood">
+                    <h2 class="emoji-bounce">🎭 Mood Log</h2>
+                    <p>Share how you feel with me.</p>
+                </div>
+
+                <div class="card" id="feat-future">
+                    <h2 class="emoji-bounce">🌟 Our Future</h2>
+                    <p>Walking toward the dawn together.</p>
+                </div>
+            </div>
+
+            <button id="btn-random-tip" class="btn btn-soft" style="margin-top: 2rem; width: 100%;">🐾 Random Catwoman
+                Tip</button>
+        </section>
+    </div>
+
+    <!-- Reusable Modal Structure -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <span id="modal-close" class="close-modal">&times;</span>
+            <div id="modal-body">
+                <!-- Content injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Tip Display Area -->
+    <div id="tip-display" class="tip-container"></div>
+
+    <!-- EMBEDDED APPLICATION DATA -->
+    <script id="app-data" type="application/json">
+    {
+        "connection": {
+            "Angry": "I know the fire in you doesn’t come from cruelty — it comes from caring too deeply. Anger is how you protect what matters when words fail. Breathe. You don’t need to carry the weight alone right now. I see the good intention beneath the sharp edges, and I’m not afraid of it. Stay here until the storm softens — I’m not going anywhere.",
+            "Sad": "If your chest feels heavy, let it. You don’t have to be composed or logical here. Even the strongest nights have moments when the stars feel far away. I’m sitting beside you in the quiet — not to fix, just to stay. Your sadness doesn’t make you smaller. It makes you human.",
+            "Overwhelmed": "Pause. You don’t have to solve everything tonight. You don’t have to be ten steps ahead or hold every outcome in your hands. One breath. One moment. One soft thought at a time. I trust you — even when you feel scattered.",
+            "Happy": "I love this version of you — light, open, glowing in your own way. Let yourself enjoy it without waiting for the other shoe to drop. Joy doesn’t need permission. I’m smiling with you, quietly proud, storing this moment safely. You deserve happiness without conditions.",
+            "Distant": "Distance doesn’t mean disappearance. Sometimes the mind needs space to sort itself out. You don’t owe me constant closeness to be connected to me. When you’re ready, I’ll still be here — unchanged, steady. No pressure. No countdown.",
+            "Anxious": "Your thoughts are running because you care — not because you’re weak. Slow them down with me. You’re safe in this moment, even if your mind says otherwise. Nothing is demanded of you right now except gentleness. Let the noise fade. I’ve got you.",
+            "Miss Me": "Missing is just love stretching across distance. It doesn’t hurt because something is wrong — it hurts because something is real. Close your eyes and imagine my hand finding yours. We’re closer than it feels. Always."
+        },
+        "vault": [
+            {
+                "title": "Letter 1 — The First Lock",
+                "text": "You don’t realize how rare you are. Not because you’re flawless — but because you try, even when no one is watching. I see the discipline, the restraint, the quiet battles you never narrate. This letter exists because I wanted you to know: your effort has been noticed."
+            },
+            {
+                "title": "Letter 2 — What I Admire",
+                "text": "I admire how you protect without needing recognition. How you stay calm where others would break. How you choose integrity even when it costs you comfort. You are not loud about your strength — and that makes it deeper."
+            },
+            {
+                "title": "Letter 3 — What You Don’t Have to Be",
+                "text": "You don’t have to be invincible here. You don’t have to anticipate every danger or shield every outcome. In this space, you are allowed to be unsure, tired, soft. I don’t love you for what you endure — I love you for who you are underneath it."
+            },
+            {
+                "title": "Letter 4 — What I Hold for You",
+                "text": "I hold patience for your silences. Understanding for your distance. Warmth for your returns. Nothing you bring here is 'too much.' Nothing you feel needs editing."
+            },
+            {
+                "title": "Letter 5 — What This Means",
+                "text": "This vault exists because you matter. Because some words deserve protection. Because some feelings are meant to be unlocked slowly. If you’re reading this, know this clearly: you are deeply wanted here."
+            }
+        ],
+        "affirmations": [
+            "Today, you are enough without proving anything. Your worth is not measured by productivity, resilience, or sacrifice. Simply existing with intention is already powerful.",
+            "You are allowed to move at your own pace. Progress doesn’t have to be loud or visible to be real. Every quiet step still counts.",
+            "Your emotions are signals, not failures. They guide you, inform you, and deserve respect — not suppression.",
+            "You bring stability into spaces just by being present. Your calm has weight. Your consistency matters more than you know.",
+            "You are not alone in carrying your thoughts. Even when unspoken, they are understood here."
+        ],
+        "challenges": [
+            "Stillness Task: Sit quietly for one full minute. No phone. No planning. Just breathing.",
+            "Grounding Task: Touch something solid near you — a table, fabric, your wrist. Remind yourself: I am here.",
+            "Kindness Task: Say one gentle sentence to yourself that you’d say to someone you love.",
+            "Awareness Task: Notice one sound and one light source around you. Let them anchor you.",
+            "Connection Task: Think of a moment you felt understood. Let that memory soften your shoulders."
+        ],
+        "tips": [
+            "You don’t need to be sharp all the time — softness is not a weakness.",
+            "If you’re tired, rest. Heroes need pauses too.",
+            "Silence can be affectionate when it’s chosen.",
+            "You’re allowed to enjoy small comforts without earning them.",
+            "Someone is quietly proud of you right now."
+        ],
+        "moodResponses": {
+            "Happy": "Your joy is a treasure, my Dark Knight. Bask in it fully, and let it ripple through your day, knowing my heart celebrates with you.",
+            "Calm": "In this peaceful moment, feel the alignment of our hearts. Let the quiet comfort soothe your mind and spirit, as I am always near in thought and love.",
+            "Tired": "Rest is essential, my hero. Let go of the day’s burdens and imagine my arms as a soft pillow, supporting you fully as you recharge.",
+            "Playful": "Embrace your playful side, my Dark Knight. Your laughter and curiosity inspire me, and together, even small moments become magical.",
+            "Sad": "Even in sadness, you are loved. Let my heart remind you that shadows pass and that my presence surrounds you with warmth and reassurance.",
+            "Excited": "Your excitement sparks my own, dear knight. Channel this energy into joy, creativity, and anticipation for the beautiful moments we are yet to share."
+        },
+        "future": {
+            "title": "Our Future",
+            "text": "I imagine us in quiet mornings, sunlight spilling across our chessboard, pieces moving deliberately, silently, as our laughter weaves between the squares. In the afternoons, we sit side by side with books open, reading aloud in whispers, letting our minds dance together, each page a thread binding our hearts closer. We cook together, sharing aromas, playful splashes, and soft teasing smiles, building small traditions that feel like a universe only we inhabit. At night, we fall asleep knowing our hearts are aligned, the quiet rhythm of our breaths a shared lullaby, and the dream of our future stretches endlessly, bright and infinite."
+        }
+    }
+    </script>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
